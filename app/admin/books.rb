@@ -1,6 +1,5 @@
 ActiveAdmin.register Book do
   permit_params :name, :title, :content, :image, :pdf
-  
   index do
     selectable_column
     id_column
