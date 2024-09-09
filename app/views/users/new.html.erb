@@ -1,0 +1,7 @@
+
+<div style="text-align: center;">
+<h1>New User</h1>
+<%= render 'form', user: @user %> 
+<%= button_to 'Login', '/auth/login', method: :get, class: 'btn btn-primary' %>
+<%= link_to 'Back', users_path %>
+</div>

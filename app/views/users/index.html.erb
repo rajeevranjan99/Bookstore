@@ -1,0 +1,37 @@
+
+<h1>users Listing</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Name</th>
+      <th>UserName</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td><%= index + 1 %></td> <!-- Adding 1 to start counting from 1 instead of 0 -->
+        <td><%= user.name %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+
+        <td><%= user.password %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'New user', new_user_path %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { 
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

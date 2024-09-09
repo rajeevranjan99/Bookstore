@@ -1,0 +1,78 @@
+# <div style="text-align: center;">
+# <h3> show the book </h3>
+# <p>
+#   <strong>Name:</strong>
+#   <%= @book.name %>
+# </p>
+
+# <p>
+#   <strong>Title:</strong>
+#   <%= @book.title %>
+# </p>
+
+# <p>
+#   <strong>Content:</strong>
+#   <%= @book.content %>
+# </p>
+# <% if @book.image.attached? %>
+# <p>
+#   <strong>Image:</strong><br>
+#   <%= image_tag url_for(@book.image), style: "height: 50px; width: 50px;"  %>
+# </p>
+# <% end %>
+# <% if @book.pdf.attached? %>
+#   <p>
+#     <strong>PDF:</strong><br>
+#     <%= link_to 'Download PDF', rails_blob_path(@book.pdf, disposition: 'attachment') %>
+#   </p>
+# <% end %>
+
+# <%= link_to 'Edit', edit_book_path(@book) %> |
+# <%= link_to 'Back', books_path %>
+# </div>
+
+
+
+
+<div style="text-align: center; margin-top: 50px;">
+  <h3 style="font-family: Arial, sans-serif; color: #333;">Show the Book</h3>
+    <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
+
+  <table style="margin-bottom: 10px;">
+    <tr style="margin-bottom: 10px;">
+      <td><strong style="font-weight: bold;">Name:</strong></td>
+      <td><%= @book.name %></td>
+    </tr>
+    <tr>
+      <td><strong style="font-weight: bold;">Title:</strong></td>
+      <td><%= @book.title %></td>
+    </tr>
+    <tr>
+      <td><strong style="font-weight: bold;">Content:</strong></td>
+      <td><%= @book.content %></td>
+    </tr>
+    <% if @book.image.attached? %>
+      <tr>
+        <td><strong style="font-weight: bold;">Image:</strong></td>
+        <td><%= image_tag url_for(@book.image), style: "height: 50px; width: 50px;"  %></td>
+      </tr>
+    <% end %>
+    <% if @book.pdf.attached? %>
+      <tr>
+        <td><strong style="font-weight: bold;">PDF:</strong></td>
+        <td><%= link_to 'Download PDF', rails_blob_path(@book.pdf, disposition: 'attachment') %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div style="margin-top: 20px;">
+    <%= link_to 'Edit', edit_book_path(@book), style: "background-color: #007bff; color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 4px;" %> |
+    <%= link_to 'Back', books_path, style: "background-color: #6c757d; color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 4px;" %>
+  </div>
+</div>
+</div>
+
+
+
+
+
